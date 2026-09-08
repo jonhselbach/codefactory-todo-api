@@ -1,0 +1,13 @@
+services:
+  todo-api:
+    build: .
+    container_name: codefactory-todo-api
+    ports:
+      - "5000:5000"
+    volumes:
+      - todo-data:/data
+    environment:
+      - DB_PATH=/data/todo.db
+
+volumes:
+  todo-data:
